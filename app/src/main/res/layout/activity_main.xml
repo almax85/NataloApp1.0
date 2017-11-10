@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.almax.nataloapp.MainActivity">
+
+    <TextView
+        android:id="@+id/sample_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello train!" />
+
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="211dp"
+        android:checked="false"
+        android:showText="true"
+        android:text="Scambio1"
+        android:textOff="dritto"
+        android:textOn="destra" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="193dp"
+        android:checked="false"
+        android:showText="true"
+        android:text="Scambio2"
+        android:textOff="dritto"
+        android:textOn="sinistra"
+        android:visibility="visible"
+        tools:checked="false" />
+
+    <ToggleButton
+        android:id="@+id/button1"
+        android:layout_width="100dp"
+        android:layout_height="62dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_button"
+        android:text="ToggleButton"
+        android:textOff="STOP"
+        android:textOn="GO" />
+
+    <ToggleButton
+        android:id="@+id/button2"
+        android:layout_width="100dp"
+        android:layout_height="62dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="111dp"
+        android:background="@drawable/bg_button"
+        android:text="ToggleButton"
+        android:textOff="STOP"
+        android:textOn="GO" />
+
+    <ToggleButton
+        android:id="@+id/button3"
+        android:layout_width="100dp"
+        android:layout_height="62dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="114dp"
+        android:background="@drawable/gb_button2"
+        android:text="ToggleButton"
+        android:textOff="GO"
+        android:textOn="STOP" />
+
+    <ToggleButton
+        android:id="@+id/button4"
+        android:layout_width="100dp"
+        android:layout_height="62dp"
+        android:layout_below="@+id/sample_text"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/gb_button2"
+        android:text="ToggleButton"
+        android:textOff="GO"
+        android:textOn="STOP" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="30dp"
+        android:layout_height="33dp"
+        android:layout_alignTop="@+id/switch1"
+        android:layout_toEndOf="@+id/switch2"
+        android:src="@drawable/scambiodx" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="30dp"
+        android:layout_height="33dp"
+        android:layout_alignTop="@+id/switch2"
+        android:layout_toEndOf="@+id/switch2"
+        android:src="@drawable/scambiosx" />
+
+
+
+
+</RelativeLayout>

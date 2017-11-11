@@ -186,7 +186,7 @@ public   class MainActivity extends Activity implements View.OnClickListener {
         break;
         case R.id.button1:
 
-        if (button1.isClickable()==true)
+        if (button1.isChecked()==true)
         {
         mQueue.offer("C03*0");
         }
@@ -196,7 +196,7 @@ public   class MainActivity extends Activity implements View.OnClickListener {
         break;
         case R.id.button2:
 
-        if (button2.isClickable()==true)
+        if (button2.isChecked()==true)
         {
         mQueue.offer("C04*0");
         }
@@ -207,7 +207,7 @@ public   class MainActivity extends Activity implements View.OnClickListener {
         break;
         case R.id.button3:
 
-        if (button3.isClickable()==true)
+        if (button3.isChecked()==true)
         {
         mQueue.offer("C05*1");
         }
@@ -219,7 +219,7 @@ public   class MainActivity extends Activity implements View.OnClickListener {
         case R.id.button4:
 
 
-        if (button4.isClickable()==true)
+        if (button4.isChecked()==true)
         {
         mQueue.offer("C06*1");
         }

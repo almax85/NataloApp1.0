@@ -1,0 +1,15 @@
+Index: app/src/main/java/com/example/almax/nataloapp/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/almax/nataloapp/MainActivity.java	(date 1510412145000)
++++ app/src/main/java/com/example/almax/nataloapp/MainActivity.java	(revision )
+@@ -11,7 +11,6 @@
+ import android.util.Log;
+ import android.view.Menu;
+ import android.view.View;
+-import android.widget.Button;
+ import android.widget.ToggleButton;
+ import android.widget.Switch;
+ import android.support.v7.app.ActionBar;

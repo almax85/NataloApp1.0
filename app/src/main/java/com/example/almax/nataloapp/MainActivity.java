@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ToggleButton;
 import android.widget.Switch;
 import android.support.v7.app.ActionBar;
 
@@ -21,7 +22,7 @@ public   class MainActivity extends Activity implements View.OnClickListener {
     private final static int PORT = 6666;
 
     private Switch switch1, switch2;
-    private Button button1, button2, button3, button4;
+    private ToggleButton button1, button2, button3, button4;
 
 
     @Override
@@ -36,16 +37,16 @@ public   class MainActivity extends Activity implements View.OnClickListener {
         switch2 = (Switch) findViewById(R.id.switch2);
         switch2.setOnClickListener(this); // calling onClick() method
 
-        button1 = (Button) findViewById(R.id.button1);
+        button1 = (ToggleButton) findViewById(R.id.button1);
         button1.setOnClickListener(this); // calling onClick() method
 
-        button2 = (Button) findViewById(R.id.button2);
+        button2 = (ToggleButton) findViewById(R.id.button2);
         button2.setOnClickListener(this); // calling onClick() method
 
-        button3 = (Button) findViewById(R.id.button3);
+        button3 = (ToggleButton) findViewById(R.id.button3);
         button3.setOnClickListener(this); // calling onClick() method
 
-        button4 = (Button) findViewById(R.id.button4);
+        button4 = (ToggleButton) findViewById(R.id.button4);
         button4.setOnClickListener(this);
                                            // calling onClick() method
 

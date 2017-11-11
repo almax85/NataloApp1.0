@@ -13,7 +13,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ToggleButton;
 import android.widget.Switch;
-import android.support.v7.app.ActionBar;
+
 
 public   class MainActivity extends Activity implements View.OnClickListener {
     private final static String TAG = ">==< ArduinoYun >==<";

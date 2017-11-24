@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://C:\Users\Simone\AndroidStudioProjects\NataloApp1.0\NataloApp.iml" filepath="C:\Users\Simone\AndroidStudioProjects\NataloApp1.0\NataloApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/NataloApp1.0.iml" filepath="$PROJECT_DIR$/.idea/NataloApp1.0.iml" />
+      <module fileurl="file://C:\Users\almax\Desktop\MATERIALE PLASTICO NATALE 17\APPLICAZIONE\NataloApp2.0\.idea\NataloApp1.0.iml" filepath="C:\Users\almax\Desktop\MATERIALE PLASTICO NATALE 17\APPLICAZIONE\NataloApp2.0\.idea\NataloApp1.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/NataloApp2.0.iml" filepath="$PROJECT_DIR$/.idea/NataloApp2.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

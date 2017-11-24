@@ -113,6 +113,7 @@
         android:layout_width="30dp"
         android:layout_height="33dp"
         android:layout_alignTop="@+id/switch1"
+
         android:layout_toEndOf="@+id/switch2"
         android:src="@drawable/scambiodx" />
 

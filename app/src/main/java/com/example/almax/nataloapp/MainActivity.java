@@ -229,9 +229,9 @@ public   class MainActivity extends Activity implements View.OnClickListener {
 
 //  AGGIUNGERE I FILE MP3 nella cartella RAW e inserirli in playlist
         playlist = new ArrayList<>();
-        playlist.add(R.raw.m0);
-        playlist.add(R.raw.m2);
 
+        playlist.add(R.raw.m1);
+        playlist.add(R.raw.m2);
 
 
 

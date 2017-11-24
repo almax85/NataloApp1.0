@@ -20,8 +20,7 @@ import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.ToggleButton;
 import android.widget.Switch;
-
-
+//
 public   class MainActivity extends Activity implements View.OnClickListener {
     private final static String TAG = ">==< ArduinoYun >==<";
     private final static String ARDUINO_IP_ADDRESS = "192.168.1.103";

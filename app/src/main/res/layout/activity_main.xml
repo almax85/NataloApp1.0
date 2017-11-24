@@ -11,6 +11,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.almax.nataloapp.MainActivity">
 
+    <ImageButton
+        android:id="@+id/audioP"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/sample_text"
+        android:layout_below="@+id/button3"
+        android:background="@drawable/play" />
+
+    <SeekBar
+        android:id="@+id/volbar"
+        android:layout_width="314dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
     <TextView
         android:id="@+id/sample_text"
         android:layout_width="wrap_content"
@@ -108,8 +123,6 @@
         android:layout_alignTop="@+id/switch2"
         android:layout_toEndOf="@+id/switch2"
         android:src="@drawable/scambiosx" />
-
-
 
 
 </RelativeLayout>

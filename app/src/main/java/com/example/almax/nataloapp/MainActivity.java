@@ -4,13 +4,20 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
 import android.app.Activity;
+import android.content.Context;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.SeekBar;
 import android.widget.ToggleButton;
 import android.widget.Switch;
 
@@ -22,6 +29,107 @@ public   class MainActivity extends Activity implements View.OnClickListener {
 
     private Switch switch1, switch2;
     private ToggleButton button1, button2, button3, button4;
+
+    MediaPlayer mp;
+    ArrayList<Integer> playlist;
+    ImageButton AudioP;
+    Boolean MpPlaying = false;
+
+    public int songId = 0;
+    public void playSong()
+    {
+        //songId = getAllResourceIDs(R.raw.class, to_play_song);
+        //mp1 = MediaPlayer.create(MainActivity.this,songId);
+
+
+        mp = MediaPlayer.create(MainActivity.this,playlist.get(songId));
+
+
+        try
+        {
+            mp.prepare();
+        }
+        catch (IllegalStateException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        mp.start();
+        Log.e ("PLAYING song: ", String.valueOf(songId));
+
+        //Called when the song comp1letes.....
+
+
+
+        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            public void onCompletion(MediaPlayer mp) {
+
+
+
+
+                if (playlist.size() == songId+1) {
+                    //mp.stop();
+                    songId=0;
+                    playSong();
+                }
+
+                else {
+                    if (playlist.size() > songId+1) {
+                        songId = songId +1;
+
+                        playSong();
+                        Log.e("NEXTSONGID", String.valueOf(songId));
+                    }
+                }
+
+
+
+
+
+
+            }
+        });
+
+    }
+
+    //function which returns the unique resource ID.
+    public static int getAllResourceIDs(Class c, String song) throws IllegalArgumentException
+    {
+        //System.out.println("inside HashMap"+ song);
+        HashMap resmap = new HashMap();
+        java.lang.reflect.Field[] fields = c.getFields();
+        try
+        {
+            for(int i = 0; i < fields.length; i++)
+            {
+                if(song != null)
+                    if(fields[i].getName().startsWith(song))
+                        resmap.put(fields[i].getName(), fields[i].getInt(null));
+                    else
+                        resmap.put(fields[i].getName(), fields[i].getInt(null));
+            }
+        } catch (Exception e)
+        {
+            throw new IllegalArgumentException();
+        }
+        Integer one = (Integer) resmap.get(song);
+        int songid = one.intValue();
+        return songid;
+    }
+
+
+
+
+
+
+
+    @Override
+    public void onDestroy() {
+        if (mp.isPlaying())
+            mp.stop();
+
+        super.onDestroy();
+    }
 
 
     @Override
@@ -49,6 +157,80 @@ public   class MainActivity extends Activity implements View.OnClickListener {
         button4.setOnClickListener(this);
                                            // calling onClick() method
 
+
+        AudioP=(ImageButton)findViewById(R.id.audioP);
+
+
+        AudioP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+
+
+                if (MpPlaying==false){
+                    playSong();
+                    AudioP.setBackgroundResource(R.drawable.stop);
+                    MpPlaying=true;
+
+                    Log.e("MP", "PLAYING");
+                }
+
+                else
+
+                {
+                    mp.stop();
+                    mp.reset();
+                    AudioP.setBackgroundResource(R.drawable.play);
+                    MpPlaying=false;
+
+
+                    Log.e("MP", "STOPPED");
+
+                }
+
+
+
+
+            }
+        });
+
+
+
+        final AudioManager audioManager;
+
+        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        int maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+        int curVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        SeekBar volControl = (SeekBar)findViewById(R.id.volbar);
+        volControl.setMax(maxVolume);
+        volControl.setProgress(curVolume);
+        volControl.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onStopTrackingTouch(SeekBar arg0) {
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar arg0) {
+            }
+
+            @Override
+            public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
+                audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, arg1, 0);
+            }
+        });
+
+
+
+
+
+
+
+//  AGGIUNGERE I FILE MP3 nella cartella RAW e inserirli in playlist
+        playlist = new ArrayList<>();
+        playlist.add(R.raw.m1);
+        playlist.add(R.raw.m2);
 
 
 
@@ -240,6 +422,7 @@ public   class MainActivity extends Activity implements View.OnClickListener {
 
 
         }
+
 
 
 

@@ -25,7 +25,7 @@ import android.widget.Switch;
 //
 public   class MainActivity extends Activity implements View.OnClickListener {
     private final static String TAG = ">==< ArduinoYun >==<";
-    private final static String ARDUINO_IP_ADDRESS = "192.168.1.103";
+    private final static String ARDUINO_IP_ADDRESS = "192.168.1.105";
     private final static int PORT = 6666;
 
     private Switch switch1, switch2;
@@ -349,18 +349,18 @@ public   class MainActivity extends Activity implements View.OnClickListener {
 
             if (switch1.isChecked()==true)
             {
-                Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p6");
+                //Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p6");
 
-                startActivity(new Intent( Intent.ACTION_VIEW, uri));
+                //startActivity(new Intent( Intent.ACTION_VIEW, uri));
 
-                mQueue.offer("C01*0");
+                mQueue.offer("on_p5");
                 //scambio dritto
             }
             else{
-                Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p5");
+                //Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p5");
 
-                startActivity(new Intent( Intent.ACTION_VIEW, uri));
-                mQueue.offer("C01*1"); //scambio destro
+               // startActivity(new Intent( Intent.ACTION_VIEW, uri));
+                mQueue.offer("on_p6"); //scambio destro
             }
             break;
 
@@ -369,16 +369,16 @@ public   class MainActivity extends Activity implements View.OnClickListener {
 
                 if (switch2.isChecked()==true)
                 {
-                    Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p8");
+                   // Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p8");
 
-                    startActivity(new Intent( Intent.ACTION_VIEW, uri));
-                    mQueue.offer("C02*0"); //scambio dritto
+                   // startActivity(new Intent( Intent.ACTION_VIEW, uri));
+                    mQueue.offer("on_p7"); //scambio dritto
                 }
                 else{
-                    Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p7");
+                   // Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p7");
 
-                    startActivity(new Intent( Intent.ACTION_VIEW, uri));
-                    mQueue.offer("C02*1"); //scambio sinistro
+                   // startActivity(new Intent( Intent.ACTION_VIEW, uri));
+                    mQueue.offer("on_p8"); //scambio sinistro
                 }
 
                 break;
@@ -386,32 +386,32 @@ public   class MainActivity extends Activity implements View.OnClickListener {
 
                 if (button1.isChecked()==true)
                 {
-                    Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p1");
+                   // Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p1");
 
-                    startActivity(new Intent( Intent.ACTION_VIEW, uri));
-                    mQueue.offer("C03*0");
+                  //  startActivity(new Intent( Intent.ACTION_VIEW, uri));
+                    mQueue.offer("on_p1");
                 }
                 else{
-                    Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/off_p1");
+                   // Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/off_p1");
 
-                    startActivity(new Intent( Intent.ACTION_VIEW, uri));
-                    mQueue.offer("C03*1");
+                    //startActivity(new Intent( Intent.ACTION_VIEW, uri));
+                    mQueue.offer("off_p1");
                 }
                 break;
             case R.id.button2:
 
                 if (button2.isChecked()==true)
                 {
-                    Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p2");
+                    //Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p2");
 
-                    startActivity(new Intent( Intent.ACTION_VIEW, uri));
-                    mQueue.offer("C04*0");
+                   // startActivity(new Intent( Intent.ACTION_VIEW, uri));
+                    mQueue.offer("on_p2");
                 }
                 else{
-                    Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/off_p2");
+                    //Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/off_p2");
 
-                    startActivity(new Intent( Intent.ACTION_VIEW, uri));
-                    mQueue.offer("C04*1");
+                    //startActivity(new Intent( Intent.ACTION_VIEW, uri));
+                    mQueue.offer("off_p2");
                 }
 
                 break;
@@ -419,16 +419,16 @@ public   class MainActivity extends Activity implements View.OnClickListener {
 
                 if (button3.isChecked()==true)
                 {
-                    Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/off_p3");
+                   // Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/off_p3");
 
-                    startActivity(new Intent( Intent.ACTION_VIEW, uri));
-                    mQueue.offer("C05*1");
+                    //startActivity(new Intent( Intent.ACTION_VIEW, uri));
+                    mQueue.offer("off_p3");
                 }
                 else{
-                    Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p3");
+                   // Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p3");
 
-                    startActivity(new Intent( Intent.ACTION_VIEW, uri));
-                    mQueue.offer("C05*0");
+                    //startActivity(new Intent( Intent.ACTION_VIEW, uri));
+                    mQueue.offer("on_p3");
                 }
 
                 break;
@@ -437,16 +437,16 @@ public   class MainActivity extends Activity implements View.OnClickListener {
 
                 if (button4.isChecked()==true)
                 {
-                    Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/off_p4");
+                   // Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/off_p4");
 
-                    startActivity(new Intent( Intent.ACTION_VIEW, uri));
-                    mQueue.offer("C06*1");
+                    //startActivity(new Intent( Intent.ACTION_VIEW, uri));
+                    mQueue.offer("off_p4");
                 }
                 else{
-                    Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p4");
+                    //Uri uri = Uri.parse("http://192.168.1.105/arduino/digital/on_p4");
 
-                    startActivity(new Intent( Intent.ACTION_VIEW, uri));
-                    mQueue.offer("C06*0");
+                    //startActivity(new Intent( Intent.ACTION_VIEW, uri));
+                    mQueue.offer("on_p4");
                 }
 
 

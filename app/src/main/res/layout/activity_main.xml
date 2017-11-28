@@ -22,10 +22,15 @@
 
     <SeekBar
         android:id="@+id/volbar"
-        android:layout_width="314dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="-10dp"
+        android:progressDrawable="@drawable/progress"
+        android:thumb="@drawable/thumb">
+
+    </SeekBar>
 
     <TextView
         android:id="@+id/sample_text"
@@ -135,10 +140,9 @@
         android:text="AUDIO ON/OFF" />
 
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/volbar"
+        android:layout_alignBottom="@+id/button1"
         android:layout_alignStart="@+id/audioP"
         android:text="VOLUME" />
 
